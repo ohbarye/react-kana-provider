@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as historykana from "historykana";
+import historykana from "historykana";
 
 type KanaProviderState = {
   history: {
