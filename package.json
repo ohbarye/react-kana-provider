@@ -1,0 +1,8 @@
+{
+  "name": "react-kana-provider",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/ohbarye/react-kana-provider.git",
+  "author": "ohbarye <over.rye@gmail.com>",
+  "license": "MIT"
+}
