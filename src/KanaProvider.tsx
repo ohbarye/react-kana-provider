@@ -50,7 +50,7 @@ const KanaContext = React.createContext<KanaProviderState>(null as any);
 const DispatchContext = React.createContext<React.Dispatch<any>>(null as any);
 
 const getInitialState = (fieldNames: string[]): KanaProviderState => {
-  let state = {
+  let state: any = {
     history: {},
     kana: {}
   };
@@ -61,13 +61,7 @@ const getInitialState = (fieldNames: string[]): KanaProviderState => {
   return state;
 };
 
-export const KanaProvider = ({
-                               fieldNames,
-                               children
-                             }: {
-  fieldNames: string[];
-  children: React.ReactNode;
-}) => {
+export const KanaProvider: React.FunctionComponent<{fieldNames: string[]}> = ({fieldNames, children}) => {
   const [state, dispatch] = React.useReducer(
     reducer,
     getInitialState(fieldNames)
@@ -81,14 +75,14 @@ export const KanaProvider = ({
   );
 };
 
-export const KanaDispatcher = ({ children }: { children: React.ReactNode }) => {
+export const KanaDispatcher: React.FunctionComponent = ({ children }) => {
   const dispatch = React.useContext(DispatchContext);
   const setKana = (fieldName: string, inputtedValue: string) =>
     dispatch({ type: "SET_KANA", fieldName, inputtedValue });
-  return children({ setKana });
+  return (typeof children === 'function') ? children({ setKana }) : null;
 };
 
-export const KanaConsumer = ({ children }: { children: React.ReactNode }) => {
+export const KanaConsumer: React.FunctionComponent = ({ children }) => {
   const { kana } = React.useContext(KanaContext);
-  return children({ kana });
+  return (typeof children === 'function') ? children({ kana }) : null;
 };
