@@ -27,7 +27,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish:patch": "yarn run build && npm version patch && git push origin master && git push origin --tags && npm publish --access=public",
     "publish:minor": "yarn run build && npm version minor && git push origin master && git push origin --tags && npm publish --access=public",
-    "publish:major": "yarn run build && npm version major && git push origin master && git push origin --tags && npm publish --access=public"
+    "publish:major": "yarn run build && npm version major && git push origin master && git push origin --tags && npm publish --access=public",
+    "prettier": "prettier --list-different \"src/**/*.{ts,tsx}\"",
+    "prettier:fix": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
     "historykana": "^1.0.4"
@@ -38,6 +40,7 @@
   "devDependencies": {
     "@types/historykana": "^1.0.0",
     "@types/react": "^16.8.2",
+    "prettier": "1.16.4",
     "rollup": "^1.1.2",
     "rollup-plugin-typescript2": "^0.19.2",
     "typescript": "^3.3.3"
