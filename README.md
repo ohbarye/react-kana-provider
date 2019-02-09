@@ -1,12 +1,19 @@
 # React Kana Provider
 
-A tiny context provider to build a better Japanese form.
+A tiny context provider to build a better Japanese form. With this library, you can implement a feature to automatically fill in kana in your form.
 
-NOTE: This library is really **experimental**. API, specification or anything can change in the future.
+![demo](https://user-images.githubusercontent.com/1811616/52522910-ad117b80-2cce-11e9-823d-a2641b1790d7.gif)
+
+NOTE: This library is **experimental**. API, specification or anything can change in the future.
+
+## In-browser playground
+
+- Basic usage https://codesandbox.io/s/q7598z00r9
+- With TypeScript https://codesandbox.io/s/ll485m360q
 
 ## Usage
 
-You can see an example app in https://github.com/ohbarye/react-kana-provider/tree/master/example.
+You can see an example code in https://github.com/ohbarye/react-kana-provider/tree/master/example.
 
 ### Installation
 
@@ -20,7 +27,7 @@ yarn add react-kana-provider
 
 Let's see the easiest example.
 
-![kana](https://user-images.githubusercontent.com/1811616/52522034-6d916200-2cc3-11e9-873f-99ac38a58de6.gif)
+![basic](https://user-images.githubusercontent.com/1811616/52522034-6d916200-2cc3-11e9-873f-99ac38a58de6.gif)
 
 ```javascript
 import React from "react";
