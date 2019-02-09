@@ -29,8 +29,10 @@
     "publish:minor": "yarn run build && npm version minor && git push origin master && git push origin --tags && npm publish --access=public",
     "publish:major": "yarn run build && npm version major && git push origin master && git push origin --tags && npm publish --access=public"
   },
+  "dependencies": {
+    "historykana": "^1.0.4"
+  },
   "peerDependencies": {
-    "historykana": ">=1.0.4",
     "react": ">=16.8"
   },
   "devDependencies": {
