@@ -5,7 +5,7 @@ export default {
   output: [
     {
       file: 'dist/js/react-kana-provider.js',
-      format: 'umd',
+      format: 'esm',
     },
   ],
   plugins: [
