@@ -1,5 +1,5 @@
-import * as React from "react";
-import historykana from "historykana";
+import * as React from 'react';
+import historykana from 'historykana';
 
 type KanaProviderState = {
   history: {
@@ -22,7 +22,7 @@ export type KanaDispatcherProps = {
 
 function reducer(state: KanaProviderState, action: any) {
   switch (action.type) {
-    case "SET_KANA": {
+    case 'SET_KANA': {
       const { inputtedValue, fieldName } = action;
       const history = inputtedValue
         ? [...state.history[fieldName], inputtedValue]
@@ -32,12 +32,12 @@ function reducer(state: KanaProviderState, action: any) {
         ...state,
         history: {
           ...state.history,
-          [fieldName]: history
+          [fieldName]: history,
         },
         kana: {
           ...state.kana,
-          [fieldName]: historykana(history)
-        }
+          [fieldName]: historykana(history),
+        },
       };
     }
     default: {
@@ -52,19 +52,21 @@ const DispatchContext = React.createContext<React.Dispatch<any>>(null as any);
 const getInitialState = (fieldNames: string[]): KanaProviderState => {
   let state: any = {
     history: {},
-    kana: {}
+    kana: {},
   };
   fieldNames.forEach(fieldName => {
     state.history[fieldName] = [];
-    state.kana[fieldName] = "";
+    state.kana[fieldName] = '';
   });
   return state;
 };
 
-export const KanaProvider: React.FunctionComponent<{fieldNames: string[]}> = ({fieldNames, children}) => {
+export const KanaProvider: React.FunctionComponent<{
+  fieldNames: string[];
+}> = ({ fieldNames, children }) => {
   const [state, dispatch] = React.useReducer(
     reducer,
-    getInitialState(fieldNames)
+    getInitialState(fieldNames),
   );
   return (
     <KanaContext.Provider value={state}>
@@ -78,11 +80,11 @@ export const KanaProvider: React.FunctionComponent<{fieldNames: string[]}> = ({f
 export const KanaDispatcher: React.FunctionComponent = ({ children }) => {
   const dispatch = React.useContext(DispatchContext);
   const setKana = (fieldName: string, inputtedValue: string) =>
-    dispatch({ type: "SET_KANA", fieldName, inputtedValue });
-  return (typeof children === 'function') ? children({ setKana }) : null;
+    dispatch({ type: 'SET_KANA', fieldName, inputtedValue });
+  return typeof children === 'function' ? children({ setKana }) : null;
 };
 
 export const KanaConsumer: React.FunctionComponent = ({ children }) => {
   const { kana } = React.useContext(KanaContext);
-  return (typeof children === 'function') ? children({ kana }) : null;
+  return typeof children === 'function' ? children({ kana }) : null;
 };

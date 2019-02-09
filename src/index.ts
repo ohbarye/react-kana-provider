@@ -1,1 +1,1 @@
-export * from "./KanaProvider";
+export * from './KanaProvider';
