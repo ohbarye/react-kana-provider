@@ -4,5 +4,10 @@
   "main": "index.js",
   "repository": "https://github.com/ohbarye/react-kana-provider.git",
   "author": "ohbarye <over.rye@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "historykana": "^1.0.4",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  }
 }
