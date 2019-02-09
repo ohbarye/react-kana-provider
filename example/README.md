@@ -1,4 +1,4 @@
-# DEMO
+# Example
 
 This is an example of react-kana-provider.
 
