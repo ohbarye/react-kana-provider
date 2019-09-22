@@ -1,4 +1,6 @@
-# React Kana Provider
+# [DEPRECATED] React Kana Provider
+
+**Please use https://github.com/ohbarye/react-use-kana , React hook version of this library.**
 
 A tiny context provider to build a better Japanese form. With this library, you can implement a feature to automatically fill in kana in your form.
 
